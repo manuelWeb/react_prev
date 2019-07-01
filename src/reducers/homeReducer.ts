@@ -1,21 +1,25 @@
-import IAction from '../constants/common/IAction';
+import IAction from '../constants/common/IAction'
 
 export interface IHomeState {
-    title: string
+  title: string
 }
 
 const initialState: IHomeState = {
-    title: 'Home'
-};
+  title: "La page d'accueil du site",
+}
 
 /**
  * Reducer pour le container Home.
  * @param state Etat du redecuder.
  * @param action Action passée au reducer.
  */
-export function homeReducer(state: IHomeState = initialState, action: IAction<any>) { // FIXME typer l'action
-    switch (action.type) {
-        default:
-            return state;
-    }
+export function homeReducer(
+  state: IHomeState = initialState,
+  action: IAction<any>
+) {
+  // FIXME typer l'action
+  switch (action.type) {
+    default:
+      return state
+  }
 }

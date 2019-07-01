@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { connect } from 'react-redux';
-import { IAppState } from '../constants/AppInterfaces';
-import history from '../helpers/history';
+import * as React from 'react'
+import { connect } from 'react-redux'
+import { IAppState } from '../constants/AppInterfaces'
+import history from '../helpers/history'
 
 interface IComponentProps {
   title: string
@@ -12,12 +12,14 @@ interface IComponentProps {
  * @param props Propriété du composant.
  */
 const divStyle = {
-  height: "200px",
-  background: "#ccc",
-};
+  height: '200px',
+  background: '#ccc',
+}
 
 const home = (props: IComponentProps) => (
   <div className="home">
+    {/* la props se trouve ici : AppInterfaces.ts > homeReducer.ts */}
+    {/* ../constants/AppInterfaces > ../reducers/homeReducer */}
     <h2>{props.title}</h2>
 
     <h2>flexbox</h2>
@@ -57,8 +59,11 @@ const home = (props: IComponentProps) => (
     </section>
 
     <h2>.grid object</h2>
-    <p><code>.grid</code> is meant for <b>one line display</b>. <br />Add any number of children and they will all be
-				automagically inlined and have same size</p>
+    <p>
+      <code>.grid</code> is meant for <b>one line display</b>. <br />
+      Add any number of children and they will all be automagically inlined and
+      have same size
+    </p>
     <section className="grid">
       <div>1</div>
       <div>2</div>
@@ -70,7 +75,9 @@ const home = (props: IComponentProps) => (
     </section>
 
     <h2>adding gutters: .grid.has-gutter</h2>
-    <p>add a <code>.has-gutter</code> class when you need gutter between children</p>
+    <p>
+      add a <code>.has-gutter</code> class when you need gutter between children
+    </p>
     <section className="grid has-gutter">
       <div>1</div>
       <div>2</div>
@@ -80,7 +87,10 @@ const home = (props: IComponentProps) => (
     </section>
 
     <h2>sizing gutters</h2>
-    <p>add a <code>.has-gutter-l</code> or <code>.has-gutter-xl</code> class to change gutter size</p>
+    <p>
+      add a <code>.has-gutter-l</code> or <code>.has-gutter-xl</code> class to
+      change gutter size
+    </p>
     <section className="grid has-gutter-xl">
       <div>1</div>
       <div>2</div>
@@ -89,16 +99,22 @@ const home = (props: IComponentProps) => (
     </section>
 
     <h2>.grid and children sizing</h2>
-    <p>children can be individually sized with classes such as <code>.one-half</code>, <code>.one-third</code>, <code>.one-quarter</code>,
-				<code>.one-fifth</code>, <code>.two-thirds</code>, <code>.three-quarters</code>, <code>.one-sixth</code>, <code>.five-sixths</code>,
-				or <code>.full</code></p>
+    <p>
+      children can be individually sized with classes such as{' '}
+      <code>.one-half</code>, <code>.one-third</code>, <code>.one-quarter</code>
+      ,<code>.one-fifth</code>, <code>.two-thirds</code>,{' '}
+      <code>.three-quarters</code>, <code>.one-sixth</code>,{' '}
+      <code>.five-sixths</code>, or <code>.full</code>
+    </p>
     <section className="grid">
       <div className="one-fifth">.one-fifth</div>
       <div>...</div>
     </section>
 
     <h2>.grid.has-gutter and children sizing</h2>
-    <p>works also with <code>.has-gutter</code> class</p>
+    <p>
+      works also with <code>.has-gutter</code> class
+    </p>
     <section className="grid has-gutter">
       <div className="one-fifth">.one-fifth</div>
       <div>...</div>
@@ -106,8 +122,10 @@ const home = (props: IComponentProps) => (
     </section>
 
     <h2>.grid-3</h2>
-    <p>add a number suffix to <code>.grid</code> such as <code>-3</code> to switch into <b>multi-lines display</b> (from
-				1 to 12)</p>
+    <p>
+      add a number suffix to <code>.grid</code> such as <code>-3</code> to
+      switch into <b>multi-lines display</b> (from 1 to 12)
+    </p>
     <section className="grid-3">
       <div>...</div>
       <div>...</div>
@@ -120,7 +138,9 @@ const home = (props: IComponentProps) => (
     </section>
 
     <h2>.grid-3.has-gutter</h2>
-    <p>works also with <code>.has-gutter</code> class</p>
+    <p>
+      works also with <code>.has-gutter</code> class
+    </p>
     <section className="grid-3 has-gutter">
       <div>...</div>
       <div>...</div>
@@ -149,7 +169,9 @@ const home = (props: IComponentProps) => (
     </section>
 
     <h2>push / pull element</h2>
-    <p>add <code>.push</code> or <code>.pull</code> class to create offsets</p>
+    <p>
+      add <code>.push</code> or <code>.pull</code> class to create offsets
+    </p>
     <section className="grid-4">
       <div>...</div>
       <div>...</div>
@@ -161,7 +183,10 @@ const home = (props: IComponentProps) => (
     </section>
 
     <h2>first / last element</h2>
-    <p>add <code>.grid-item-first</code> or <code>.grid-item-last</code> class to reorder elements</p>
+    <p>
+      add <code>.grid-item-first</code> or <code>.grid-item-last</code> class to
+      reorder elements
+    </p>
     <section className="grid-4">
       <div>...</div>
       <div className="grid-item-last">.grid-item-last</div>
@@ -173,7 +198,10 @@ const home = (props: IComponentProps) => (
     </section>
 
     <h2>reverse order: </h2>
-    <p>add <code>--reverse</code> suffix on grid container to reverse the whole grid</p>
+    <p>
+      add <code>--reverse</code> suffix on grid container to reverse the whole
+      grid
+    </p>
     <section className="grid-3--reverse-small-2">
       <div>one</div>
       <div>two</div>
@@ -185,8 +213,11 @@ const home = (props: IComponentProps) => (
     </section>
 
     <h2>.grid-3-small-2</h2>
-    <p>add <code>-small-X</code> (X from 1 to 4) suffix to define column numbers on small screens, here will be 2
-				columns. <i>Note : on tiny screens, value is always 1 column</i></p>
+    <p>
+      add <code>-small-X</code> (X from 1 to 4) suffix to define column numbers
+      on small screens, here will be 2 columns.{' '}
+      <i>Note : on tiny screens, value is always 1 column</i>
+    </p>
     <section className="grid-3-small-2">
       <div>...</div>
       <div>...</div>
@@ -226,7 +257,9 @@ const home = (props: IComponentProps) => (
     </section>
 
     <h2>.grid-3-small-2.has-gutter</h2>
-    <p>works also with <code>.has-gutter</code> class</p>
+    <p>
+      works also with <code>.has-gutter</code> class
+    </p>
     <section className="grid-3-small-2 has-gutter">
       <div>...</div>
       <div>...</div>
@@ -245,7 +278,10 @@ const home = (props: IComponentProps) => (
     </section>
 
     <h2>Sass mixin</h2>
-    <p>you can design your own Sass mixin. Here : <code>.grid-sans-gouttiere &#123; &#64;include grid(4, 0); &#125;</code></p>
+    <p>
+      you can design your own Sass mixin. Here :{' '}
+      <code>.grid-sans-gouttiere &#123; &#64;include grid(4, 0); &#125;</code>
+    </p>
     <section className="grid-sans-gouttiere">
       <div>...</div>
       <div>...</div>
@@ -257,7 +293,10 @@ const home = (props: IComponentProps) => (
     </section>
 
     <h2>Sass mixin and gutter</h2>
-    <p>works also. Here : <code>.grid-perso &#123; &#64;include grid(4, 2rem); &#125;</code></p>
+    <p>
+      works also. Here :{' '}
+      <code>.grid-perso &#123; &#64;include grid(4, 2rem); &#125;</code>
+    </p>
     <section className="grid-perso">
       <div>...</div>
       <div>...</div>
@@ -267,14 +306,19 @@ const home = (props: IComponentProps) => (
       <div>...</div>
       <div>...</div>
     </section>
-                <button className="btn btn--success" onClick={() => history.push("/Account")} > account</button>
-
+    <button
+      className="btn btn--success"
+      onClick={() => history.push('/Account')}
+    >
+      {' '}
+      account
+    </button>
   </div>
-);
+)
 
 function mapStateToProps(state: IAppState) {
   return {
-    title: state.home.title
+    title: state.home.title,
   }
 }
 
