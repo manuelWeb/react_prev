@@ -1,0 +1,330 @@
+// -----------------------------------------------------------------------------
+// This file contains CSS helper classes.
+// -----------------------------------------------------------------------------
+
+/**
+ * Clear inner floats
+ */
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/**
+ * Main content containers
+ * 1. Make the container full-width with a maximum width
+ * 2. Center it in the viewport
+ * 3. Leave some space on the edges, especially valuable on small screens
+ */
+.container {
+  width: 100%;
+  /* 1 */
+  max-width: $site-max-width;
+  /* 1 */
+  margin-right: auto;
+  /* 2 */
+  margin-left: auto;
+  /* 2 */
+  padding-right: $spacer-medium;
+  /* 3 */
+  padding-left: $spacer-medium;
+  /* 3 */
+}
+
+/**
+ * Hide text while making it readable for screen readers
+ * 1. Needed in WebKit-based browsers because of an implementation bug;
+ *    See: https://code.google.com/p/chromium/issues/detail?id=457146
+ */
+.hide-text {
+  padding: 0;
+  /* 1 */
+  overflow: hidden;
+  text-indent: 101%;
+  white-space: nowrap;
+}
+
+/**
+ * Hide element while making it readable for screen readers
+ * Shamelessly borrowed from HTML5Boilerplate:
+ * https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css#L119-L133
+ */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
+}
+
+/**
+* Max Width
+*/
+.fit {
+  max-width: 100%;
+}
+
+/* blocks that need to be placed under floats */
+
+.clear,
+.u-clear {
+  clear: both;
+}
+
+/* blocks that must contain floats */
+
+.clearfix,
+.u-clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+    border-collapse: collapse;
+  }
+}
+
+/* blocks widths (percentage and pixels) */
+$i: 100;
+
+@while $i>0 {
+  .w#{$i} {
+    width: $i * 1%;
+  }
+
+  $i: $i - 5; /* stylelint-disable-line */
+}
+
+.w66 {
+  width: calc(100% / 3 * 2);
+}
+
+.w33 {
+  width: calc(100% / 3);
+}
+
+$i: 1000;
+
+.wauto {
+  width: auto;
+}
+
+.w960p {
+  width: 960px;
+}
+
+.mw960p {
+  max-width: 960px;
+}
+
+.w1140p {
+  width: 1140px;
+}
+
+.mw1140p {
+  max-width: 1140px;
+}
+
+@while $i>0 {
+  .w#{$i}p {
+    width: $i * 1px;
+  }
+
+  $i: $i - 50; /* stylelint-disable-line */
+}
+
+/* Spacing Helpers */
+/* --------------- */
+
+.man,
+.ma0 {
+  margin: 0;
+}
+
+.pan,
+.pa0 {
+  padding: 0;
+}
+
+.mas {
+  margin: $spacer-small;
+}
+
+.mam {
+  margin: $spacer-medium;
+}
+
+.mal {
+  margin: $spacer-large;
+}
+
+.pas {
+  padding: $spacer-small;
+}
+
+.pam {
+  padding: $spacer-medium;
+}
+
+.pal {
+  padding: $spacer-large;
+}
+
+.mtn,
+.mt0 {
+  margin-top: 0;
+}
+
+.mts {
+  margin-top: $spacer-small;
+}
+
+.mtm {
+  margin-top: $spacer-medium;
+}
+
+.mtl {
+  margin-top: $spacer-large;
+}
+
+.mrn,
+.mr0 {
+  margin-right: 0;
+}
+
+.mrs {
+  margin-right: $spacer-small;
+}
+
+.mrm {
+  margin-right: $spacer-medium;
+}
+
+.mrl {
+  margin-right: $spacer-large;
+}
+
+.mbn,
+.mb0 {
+  margin-bottom: 0;
+}
+
+.mbs {
+  margin-bottom: $spacer-small;
+}
+
+.mbm {
+  margin-bottom: $spacer-medium;
+}
+
+.mbl {
+  margin-bottom: $spacer-large;
+}
+
+.mln,
+.ml0 {
+  margin-left: 0;
+}
+
+.mls {
+  margin-left: $spacer-small;
+}
+
+.mlm {
+  margin-left: $spacer-medium;
+}
+
+.mll {
+  margin-left: $spacer-large;
+}
+
+.mauto {
+  margin: auto;
+}
+
+.mtauto {
+  margin-top: auto;
+}
+
+.mrauto {
+  margin-right: auto;
+}
+
+.mbauto {
+  margin-bottom: auto;
+}
+
+.mlauto {
+  margin-left: auto;
+}
+
+.ptn,
+.pt0 {
+  padding-top: 0;
+}
+
+.pts {
+  padding-top: $spacer-small;
+}
+
+.ptm {
+  padding-top: $spacer-medium;
+}
+
+.ptl {
+  padding-top: $spacer-large;
+}
+
+.prn,
+.pr0 {
+  padding-right: 0;
+}
+
+.prs {
+  padding-right: $spacer-small;
+}
+
+.prm {
+  padding-right: $spacer-medium;
+}
+
+.prl {
+  padding-right: $spacer-large;
+}
+
+.pbn,
+.pb0 {
+  padding-bottom: 0;
+}
+
+.pbs {
+  padding-bottom: $spacer-small;
+}
+
+.pbm {
+  padding-bottom: $spacer-medium;
+}
+
+.pbl {
+  padding-bottom: $spacer-large;
+}
+
+.pln,
+.pl0 {
+  padding-left: 0;
+}
+
+.pls {
+  padding-left: $spacer-small;
+}
+
+.plm {
+  padding-left: $spacer-medium;
+}
+
+.pll {
+  padding-left: $spacer-large;
+}

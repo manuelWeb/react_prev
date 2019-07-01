@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="shortcut icon" href="%PUBLIC_URL%/favicon-32x32.png">
+	<meta name="theme-color" content="#4285f4">
+	<!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+	<link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+	<!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+	<title>React App</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+
+<body>
+	<noscript>
+		You need to enable JavaScript to run this app.
+	</noscript>
+
+	<div class="site__wrapper site--sidebar-right">
+
+		<header class="site__header">
+			<div class="header__wrapper">
+				<div class="header__btn-navigation">
+					<a href="#site__navigation" id="navigation__btn">
+						<span aria-hidden="true">≡</span> menu
+					</a>
+				</div>
+				<div class="header__brand">
+					<h1 class="ma0">
+						<img src="https://www.becquet.fr/portailbcq_img/svg/bcq-logo.svg" alt="Linge de maison Becquet - Accueil" style="width: 100%;">
+					</h1>
+
+				</div>
+				<div class="header__search">search</div>
+				<div class="header__profile">
+
+					<div class="popover-overlay popover-overlay--is-full-medium">
+						<a href="/" title="" class="popover-overlay__btn">
+							profile
+						</a>
+						<div class="popover-overlay__content" role="dialog">
+							content profile
+						</div>
+					</div>
+				</div>
+				<div class="header__cart">
+
+					<div class="popover-overlay popover-overlay--is-full-medium">
+						<a href="/" title="" class="popover-overlay__btn">
+							cart
+						</a>
+						<div class="popover-overlay__content" role="dialog">
+							content cart
+						</div>
+					</div>
+				</div>
+		</header>
+
+		<nav class="site__nav" id="site__navigation" role="navigation">
+			<div class="nav__wrapper flex-container">
+				<ul class="dropdown-menu item-fluid item-center">
+					<li class="dropdown-menu__item">
+						<a href="/" class="dropdown-menu__link">Home</a>
+						<div class="dropdown-menu__content">
+							content item 1
+						</div>
+					</li>
+					<li class="dropdown-menu__item">
+						<a href="/Login" class="dropdown-menu__link">Login</a>
+						<div class="dropdown-menu__content">
+							content item 2
+						</div>
+					</li>
+					<li class="dropdown-menu__item">
+						<a href="/ForgotPassword" class="dropdown-menu__link">ForgotPassword</a>
+						<div class="dropdown-menu__content">
+							content item 3
+						</div>
+					</li>
+					<li class="dropdown-menu__item">
+						<a href="/CreateAccount" class="dropdown-menu__link">CreateAccount</a>
+						<div class="dropdown-menu__content">
+							content item 4
+						</div>
+					</li>
+					<li class="dropdown-menu__item">
+						<a href="/Account" class="dropdown-menu__link">Account</a>
+						<div class="dropdown-menu__content">
+							content item 5
+						</div>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<main class="site__main debug">
+			<div id="root"></div>
+		</main>
+
+		<aside class="site__sidebar">
+			<h2>Button</h2>
+			<button class="btn mbs">default</button>
+			<button class="btn btn--brand mbs">brand</button>
+			<button class="btn btn--primary mbs">primary</button>
+			<button class="btn btn--danger mbs">danger</button>
+			<button class="btn btn--success mbs">success</button>
+			<button class="btn btn--info mbs">info</button>
+			<button class="btn btn--warning mbs">warning</button>
+			<button class="btn btn--inverse mbs">inverse</button>
+			<button class="btn btn--ghost mbs">ghost</button>
+			<button class="btn btn--icon mbs"><i class="icon icon--left">L</i>icon left</button>
+			<button class="btn btn--icon mbs"><i class="icon icon--right">R</i>icon right</button>
+			<button class="btn btn--unstyled mbs">unstyled</button>
+			<button class="btn btn--small mbs">small</button>
+			<button class="btn btn--big mbs">big</button>
+
+			<h2>Alert</h2>
+
+			<div class="alert alert--success">
+				<p><b>Alert :</b> success</p>
+			</div>
+			<div class="alert alert--info">
+				<p><b>Alert :</b> info</p>
+			</div>
+			<div class="alert alert--warning">
+				<p><b>Alert :</b> warning</p>
+			</div>
+			<div class="alert alert--danger">
+				<p><b>Alert :</b> danger</p>
+			</div>
+
+		</aside>
+
+		<footer class="site__footer">
+			<div class="footer__wrapper">&copy; 2018</div>
+		</footer>
+
+		<div class="overlay" id="overlay"></div>
+	</div>
+
+
+	<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+	<script src="%PUBLIC_URL%/assets/js/main.js"></script>
+
+</body>
+
+</html>

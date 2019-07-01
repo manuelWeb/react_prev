@@ -1,0 +1,144 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+
+// ------
+// LAYOUT
+// ------
+
+.site__header {
+  display: flex;
+  align-items: center;
+  min-height: $header-min-height;
+  
+  .site__header--sticky & {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+
+  }
+
+  .header__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    .header__search {
+      @include respond-to("medium") {
+        flex: 1 1 100%;
+        order: 1;
+      }
+    }
+
+    .header__brand {
+      flex: 1 1 0%;
+    }
+
+    .header__btn-navigation,
+    .header__profile,
+    .header__cart {
+      flex: 0 1 60px;
+    }
+
+    /* stylelint-disable-next-line */
+    @include respond-to("small-up") {
+      .header__btn-navigation,
+      .header__profile,
+      .header__cart {
+        flex: 0 1 90px;
+      }
+    }
+
+    @include respond-to("medium-up") {
+      .header__btn-navigation {
+        display: none;
+      }
+
+      .header__brand {
+        flex: 0 1 220px;
+      }
+
+      .header__search {
+        flex: 1 1 0%;
+      }
+
+      .header__profile,
+      .header__cart {
+        flex: 0 1 110px;
+      }
+    }
+  }
+
+  .site__header--sticky & {
+    .header__btn-navigation {
+      display: flex;
+    }
+
+    .header__btn-navigation {
+      order: 1;
+    }
+
+    .header__search {
+      order: 2;
+    }
+
+    .header__brand {
+      order: 3;
+    }
+
+    .header__profile {
+      order: 4;
+    }
+
+    .header__profile {
+      order: 5;
+    }
+
+    .header__cart {
+      order: 6;
+    }
+
+    .header__brand {
+      flex: 1 1 0%;
+    }
+
+    .header__btn-navigation,
+    .header__search,
+    .header__profile,
+    .header__cart {
+      flex: 0 1 60px;
+    }
+
+    /* stylelint-disable-next-line */
+    @include respond-to('medium-up') { 
+      .header__btn-navigation,
+      .header__search,
+      .header__profile,
+      .header__cart {
+        flex: 0 1 110px;
+      }
+
+      .header__brand {
+        flex: 1 1 0%;
+      }
+    }
+
+  }
+}
+
+// animate on sticky
+.site__header--sticky .site__header {
+  animation: show-header 0.3s;
+}
+
+@keyframes show-header {
+  0% {
+    transform: translatey(-60px);
+  }
+
+  100% {
+    transform: translatey(0);
+  }
+}

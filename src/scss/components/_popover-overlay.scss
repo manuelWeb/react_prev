@@ -1,0 +1,49 @@
+.popover-overlay {
+
+  @include respond-to("medium-up") {
+    position: relative;
+  }
+
+  .popover-overlay__content {
+    position: absolute;
+    right: 0;
+    width: 400px;
+    height: 0;
+    overflow: hidden;
+    transform: translateY(calc(-100% - #{$header-min-height}));
+    background: #fff;
+  }
+
+  &--is-visible {
+
+    background: #fff;
+
+    .popover-overlay__content {
+      height: 600px;
+      max-height: 400px;
+      transform: translateY(0);
+      animation: popover-translateY 0.3s;
+    }
+  }
+  
+  /* stylelint-disable-next-line */
+  @include respond-to('medium') {
+    &--is-full-medium {
+      .popover-overlay__content {
+        right: 0;
+        left: 0;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@keyframes popover-translateY {
+  0% {
+    height: 0;
+  }
+
+  100% {
+    height: 400px;
+  }
+}

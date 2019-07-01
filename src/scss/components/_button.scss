@@ -1,0 +1,115 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+
+/* ----------------------------- */
+/* ==Buttons                     */
+/* ----------------------------- */
+/* preferably use <button> for buttons !*/
+/* use .btn-- or .button-- classes for variants */
+
+%btn {
+  display: inline-block;
+  padding: $spacer-small $spacer-small-plus;
+  transition: 0.25s;
+  transition-property: box-shadow, background-color, color, border;
+  border: 0;
+  border-radius: $border-radius;
+  background-color: $color-muted;
+  color: $color-base;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+}
+
+.btn,
+.button,
+[type="button"],
+button {
+  @extend %btn;
+
+  &:focus {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+.btn,
+.button {
+  @each $name, $background-color, $color, $border in $variants-list {
+    &--#{$name} {
+      @extend %btn;
+      background-color: $background-color;
+      box-shadow: $border;
+      color: $color;
+
+      &:active,
+      &:focus,
+      &:hover {
+        background-color: darken($background-color, 10%);
+      }
+    }
+  }
+}
+
+// button state variants
+.btn,
+.button {
+  &--small {
+    padding: $spacer-tiny-plus $spacer-small;
+    font-size: 0.8em;
+  }
+
+  &--big {
+    padding: $spacer-small-plus $spacer-medium;
+    font-size: 1.4em;
+  }
+
+  &--block {
+    display: block;
+    width: 100% !important;
+  }
+
+  &--unstyled {
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+    text-align: left;
+    appearance: none;
+
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+}
+
+// button appearence (square / pill / circle)
+.btn,
+.button {
+  &--square {
+    border-radius: 0;
+  }
+
+  &--pill {
+    border-radius: 0.75em / 50%;
+  }
+}
+
+
+// button whith icon
+.btn__icon,
+.button__icon {
+  &--right {
+    order: 0;
+  }
+
+}
+

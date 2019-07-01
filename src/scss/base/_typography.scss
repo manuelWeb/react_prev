@@ -1,0 +1,9 @@
+/**
+ * Basic typography style for copy text
+ */
+body {
+  @include font-size(base);
+  color: $color-base;
+  font-family: $font-family-base;
+  line-height: $line-height-base;
+}

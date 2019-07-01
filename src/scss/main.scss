@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+/* autoprefixer grid: on */
+
+// 1. Configuration and helpers
+@import
+  "abstracts/colors",
+  "abstracts/variables",
+  "abstracts/functions",
+  "abstracts/mixins";
+
+// 2. Vendors
+@import
+  "vendors/normalize";
+
+// 3. Base stuff
+@import
+  "base/base",
+  "base/fonts",
+  "base/typography",
+  "base/helpers";
+
+// 4. Layout-related sections
+@import
+  "layout/layout",   
+  "layout/grid-flex",  
+  "layout/templates",
+  "layout/overlay",
+  "layout/header",
+  "layout/nav",
+  "layout/footer";
+
+// 5. Components
+@import
+  "components/dropdown-menu",
+  "components/popover-overlay",
+  "components/alert",
+  "components/button",
+  "components/app";
+
+// 6. Page-specific styles
+@import
+  "pages/home";
+
+// 7. Themes
+@import
+  "themes/default";
+
+

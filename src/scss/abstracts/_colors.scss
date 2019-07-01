@@ -1,0 +1,34 @@
+// -----------------------------------------------------------------------------
+// This file contains all application colors.
+// -----------------------------------------------------------------------------
+
+// palette
+$white: #fff;
+$black: #000;
+
+// Semantic colors
+$color-brand: rgb(236, 107, 14) !default;
+$color-primary: #0275d8 !default;
+$color-success: #5cb85c !default;
+$color-info: #5bc0de !default;
+$color-warning: #f0ad4e !default;
+$color-danger: #d9534f !default;
+$color-inverse: #333 !default;
+$color-ghost: transparent;
+$color-muted: #e7e9ed !default;
+
+//background
+
+$color-base: #212529 !default;
+$background-base: #fff !default;
+
+$variants-list: (
+  (brand,      $color-brand,      $white,    none),
+  (primary,    $color-primary,    $white,    none),
+  (success,    $color-success,    $white,    none),
+  (info,       $color-info,       $black,    none),
+  (warning,    $color-warning,    $black,    none),
+  (danger,     $color-danger,     $white,    none),
+  (inverse,    $color-inverse,    $white,    none),
+  (ghost,      $color-ghost,      $white,    0 0 0 1px $white inset)
+) !default;

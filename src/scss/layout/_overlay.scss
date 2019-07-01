@@ -1,0 +1,69 @@
+.overlay {
+  position: fixed;
+  z-index: z("overlay");
+  top: -100px;
+  left: -100px;
+  width: 0;
+  height: 0;
+  -webkit-overflow-scrolling: touch;
+  transition: background-color 0.3s ease;
+  background-color: rgba(#000, 0);
+}
+
+.overlay--is-visible {
+  //overflow: hidden;
+  // scrollbar hidden
+  //margin-right: 17px;
+
+  .overlay {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(#000, 0.7);
+
+    //add fake scrollbar
+    // &::after {
+    //   content: '';
+    //   position: absolute;
+    //   top: 0;
+    //   bottom: 0;
+    //   right: 0;
+    //   height: 100%;
+    //   background: #ccc;
+    //   width: 17px;
+    //   overflow-y: scroll;
+    // }
+  }
+}
+
+.site__header {
+  z-index: z("site-navigation");
+
+  // body:not(.site__nav--is-visible) &+.site__nav,
+  // body:not(.site__nav--is-active) &+.site__nav,
+  body:not(.site__nav--is-visible):not(.site__nav--is-active) &+.site__nav {
+    z-index: z("site");
+  }
+
+  /* stylelint-disable-next-line */
+  @include respond-to('medium') {
+    .site__nav--is-visible & {
+      z-index: z("overlay");
+
+      +.site__nav {
+        z-index: z("site-navigation-open");
+      }
+    }
+  }
+}
+
+@include respond-to("medium-up") {
+  .site__header {
+    z-index: z("site-navigation");
+  }
+
+  .site__nav {
+    z-index: z("site-navigation") - 1;
+  }
+}
